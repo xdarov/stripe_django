@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Order</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    {% if data.0 is not None %}
+    <div class="div1">
+        {% for elem in data %}
+        <p class="name">{{ elem.item__name }}</p>
+        <p class="price">{{ elem.count }}</p>
+        {% endfor %}
+    </div>
+    <button onclick=location.href='{% url "orderbuy" %}' class="button1">Купить</button>
+    {% else %}
+    <p class="name">No products</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Product</title>
+{% endblock %}
+
+{% block body %}
+    {% if name %}
+    <div class="div1">
+    <p class="name">{{ name }}</p>
+    <p class="description">{{ description }}</p>
+    <p class="price">{{ price }}</p>
+    <button class="button1" onclick=location.href='{% url "buy" id %}'>Покупка в 1 клик</button>
+    <form name="CountForm" method="post">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div>
+            <button type="button" class="small" onclick="down()">-</button>
+            <input class="small" type="text" id="count" name="count" value="{{ count }}"/>
+        
+            <button type="button" class="small" onclick="up()">+</button>
+           </div> 
+            <button type="submit" class="button1" onclick="">Обновить Корзину</button>
+            <div class="wrapper">
+                {{ error }}
+            </div>
+        </div>
+    </form>
+</div>
+    {% else %}
+    <p>No item</p>
+    {% endif %}
+{% endblock %}

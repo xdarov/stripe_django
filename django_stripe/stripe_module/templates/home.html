@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    {% for elem in data %}
+    <div class="div1">
+    <p class="name">{{ elem.name }}</p>
+    <p class="description">{{ elem.description }}</p>
+    <p class="price">{{ elem.price }}</p>
+    <div class= "wrapper">
+    <button  onclick=location.href='{% url "item" elem.id %}'>Подробнее</button>
+
+    </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+
+
