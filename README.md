@@ -10,7 +10,9 @@ python3.10
 
 
 pip install -r requirements.txt
+
 python manage.py makemigrations
+
 python manage.py migrate
 
 bash env.sh
