@@ -12,8 +12,8 @@
         <p class="name">{{ elem.item__name }}</p>
         <p class="price">{{ elem.count }}</p>
         {% endfor %}
+        <button onclick=location.href='{% url "orderbuy" %}' class="button1">Купить</button>
     </div>
-    <button onclick=location.href='{% url "orderbuy" %}' class="button1">Купить</button>
     {% else %}
     <p class="name">No products</p>
     {% endif %}

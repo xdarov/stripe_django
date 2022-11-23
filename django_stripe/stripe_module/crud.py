@@ -43,7 +43,7 @@ class Crud:
             'count').values('item__name', "count")
 
     @staticmethod
-    def get_orders_for_session():
+    def get_orders_for_session() -> list[dict]:
         items = Order.objects.annotate(
             price=F('item__api__api_key'),
             quantity=F('count')).values('price', 'quantity')

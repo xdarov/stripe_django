@@ -31,7 +31,6 @@ class ProductPage(TemplateView):
 
     def get(self, request, item_id, *args, **kwargs):
         self.product: Item = Crud.get_item_by_id(item_id)
-        print(self.product)
         return super().get(request, *args, **kwargs)
 
     def validation_form(self, value):
