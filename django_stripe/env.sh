@@ -8,5 +8,5 @@ export 'DB_ENGINE=' \
     'SECRET_KEY=' \
     'DOMEN='
 
+python manage.py collectstatic && \
 python manage.py runserver --insecure
-# python manage.py collectstatic
